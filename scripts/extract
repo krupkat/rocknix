@@ -40,7 +40,7 @@ fi
 # can be disabled by PKG_TAR_STRIP_COMPONENTS="no" in package.mk
 TAR_OPTS=""
 if [ -z "${PKG_SOURCE_DIR}" ]; then
-  [ -z "${PKG_TAR_STRIP_COMPONENTS}" ] && TAR_OPTS="--strip-components=1" || :
+  [ -z "${PKG_TAR_STRIP_COMPONENTS}" ] && TAR_OPTS="--strip-components=1 --no-same-owner" || :
   DESTDIR="${2}/${PKG_NAME}-${PKG_VERSION}"
 else
   DESTDIR="${2}"

@@ -6,17 +6,13 @@ SHELL ["/usr/bin/bash", "-c"]
 
 RUN apt-get update \
  && apt-get dist-upgrade -y \
- && apt-get install -y locales sudo
+ && apt-get install -y locales
 
 RUN locale-gen en_US.UTF-8 \
  && update-locale LANG=en_US.UTF-8 LANGUAGE=en_US:en
 ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US:en \
     LC_ALL=en_US.UTF-8
-
-RUN adduser --disabled-password --gecos '' docker \
- && adduser docker sudo \
- && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 RUN apt-get update \
  && apt-get install -y \
@@ -42,9 +38,4 @@ RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 \
     --slave /usr/bin/gcov gcov /usr/bin/gcov-12
 RUN update-alternatives --config gcc
 
-RUN mkdir -p /nix && chown docker /nix && chmod 777 /nix
-RUN mkdir -p /work && chown docker /work
-
 WORKDIR /work
-
-USER docker
