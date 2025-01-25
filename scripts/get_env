@@ -1,2 +1,17 @@
 #!/usr/bin/env bash
-for var in $(compgen -e); do echo "$var=${!var}"; done
+
+env | grep -e PROJECT= \
+ -e DEVICE= \
+ -e ARCH= \
+ -e EMULATION_DEVICE= \
+ -e ENABLE_32BIT= \
+ -e BASE_ONLY= \
+ -e CONTAINER_SUPPORT= \
+ -e LOCAL_SSH_KEYS_FILE= \
+ -e LOCAL_WIFI_SSID= \
+ -e LOCAL_WIFI_KEY= \
+ -e SCREENSCRAPER_DEV_LOGIN= \
+ -e GAMESDB_APIKEY= \
+ -e CHEEVOS_DEV_LOGIN= \
+ -e CLEAN_PACKAGES= \
+ -e CONCURRENCY_MAKE_LEVEL=
