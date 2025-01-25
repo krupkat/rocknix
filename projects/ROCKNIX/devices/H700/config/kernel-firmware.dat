@@ -5,6 +5,9 @@ rtw88/rtw8821c_fw.bin
 rtl_bt/rtl8821cs_config.bin
 rtl_bt/rtl8821cs_fw.bin
 
+# R8188EU
+rtlwifi/rtl8188eufw.bin
+
 # Panels
 panels/anbernic,rg28xx-panel.panel
 panels/anbernic,rgcubexx-panel.panel
