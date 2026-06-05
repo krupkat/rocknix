@@ -5,6 +5,6 @@ mkShell {
 
   ];
 
-  EMULATION_DEVICE = "no";
+  EMULATION_DEVICE = "yes";
   ENABLE_32BIT = "no";
 }
